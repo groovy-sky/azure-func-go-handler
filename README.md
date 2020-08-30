@@ -1,4 +1,4 @@
-# 
+# Azure Functions custom handler in Go
 
 ![](https://raw.githubusercontent.com/groovy-sky/azure/master/images/logos/function.png)
 
