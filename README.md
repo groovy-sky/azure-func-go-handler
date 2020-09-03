@@ -1,6 +1,6 @@
 # Azure Functions custom handler in Go
 
-This repository contains an example of an Azure Functions custom handler in Go. 
+This repository contains an example of an Azure Functions custom handler in Go. **Detailed instruction how-to run you can find [here](https://github.com/groovy-sky/azure/tree/master/func-custom-handler-00#introduction).**
 
 You can use Azure Cloud Shell in Bash mode for deploying and building Functions environment. Just execute script below:
 
@@ -18,5 +18,4 @@ go build *.go && func azure functionapp publish $function --no-build --force
 
 If the publishing was successful you can validate a result by accessing a newly created function.
 
-Exact instruction how-to run you can find [here](https://github.com/groovy-sky/azure/tree/master/func-custom-handler-00#introduction)
 
