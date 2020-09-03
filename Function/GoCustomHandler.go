@@ -9,11 +9,14 @@ import (
 )
 
 func httpTriggerHandler(w http.ResponseWriter, r *http.Request) {
-	clientIP := r.Header.Get("X-Forwarded-For")
-    w.Write([]byte(strings.Split(clientIP,":")[0]))
+    if r.Header.Get("X-Forwarded-For") != "" {
+        w.Write([]byte(strings.Split(r.Header.Get("X-Forwarded-For"),":")[0]))
+    } else if r.Header.Get("Host") != "" {
+        w.Write([]byte(strings.Split(r.Header.Get("Host"),":")[0]))
+    } else if r.RemoteAddr != "" {
+        w.Write([]byte(strings.Split(r.RemoteAddr,":")[0]))
+    }
 }
-
-
 
 func main() {
 	httpInvokerPort, exists := os.LookupEnv("FUNCTIONS_HTTPWORKER_PORT")
